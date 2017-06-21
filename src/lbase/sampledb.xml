@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="ubuntu (generated)" id="1482608299217-1">
+        <createTable tableName="food">
+            <column name="food_id" type="INT"/>
+            <column name="food_desc" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet author="Richard Irving" id="add-meat-table">
+        <createTable tableName="meat">
+            <column name="meat_id" type="INT"/>
+            <column name="meat_desc" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
+

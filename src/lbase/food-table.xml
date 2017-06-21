@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+<!-- changeset 1 
+     roll forward:  ./liquibase changeLogFile=./meat.xml update
+     roll backward: ./liquibase changeLogFile=./meat.xml rollbackCount 1
+-->
+    <changeSet id="add-food-table" author="irvingr">
+
+        <createTable tableName="food">
+            <column name="food_id"   type="int"/>
+            <column name="food_desc" type="varchar(20)"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="food"/>
+        </rollback>
+
+    </changeSet>
+
+<!-- changeset 2
+-->
+   <changeSet id="update-food-table" author="irvingr">
+
+        <addColumn 
+            schemaName="sampledb"
+            tableName="food">
+           <column name="comment" type="varchar(50)"/>
+        </addColumn>
+
+    </changeSet>
+
+
+</databaseChangeLog>
+
